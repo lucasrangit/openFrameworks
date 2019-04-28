@@ -25,18 +25,18 @@ export CXX="ccache ${TOOLCHAIN_ROOT}/bin/${GCC_PREFIX}-g++"
 export CC="ccache ${TOOLCHAIN_ROOT}/bin/${GCC_PREFIX}-gcc"
 export AR=${TOOLCHAIN_ROOT}/bin/${GCC_PREFIX}-ar
 export LD=${TOOLCHAIN_ROOT}/bin/${GCC_PREFIX}-ld
-make Debug
+make
 
 echo "**** Building emptyExample ****"
 cd $OF_ROOT/scripts/templates/linuxarmv6l
-make Debug
+make
 
 echo "**** Building allAddonsExample ****"
 cd $OF_ROOT
 cp scripts/templates/linuxarmv6l/Makefile examples/templates/allAddonsExample/
 cp scripts/templates/linuxarmv6l/config.make examples/templates/allAddonsExample/
 cd examples/templates/allAddonsExample/
-make Debug
+make
 
 git checkout $PROJECTS/makefileCommon/config.linux.common.mk
 git checkout $PROJECTS/linuxarmv6l/config.linuxarmv6l.default.mk
